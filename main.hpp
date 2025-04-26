@@ -11,6 +11,7 @@ int writeFile(string filename) {
     int numEmployees;
     cout << "Enter number of employees: ";
     cin >> numEmployees;
+    outfile << numEmployees << endl;
 
     for (int i = 0; i < numEmployees; i++) {
         int id;
@@ -24,23 +25,23 @@ int writeFile(string filename) {
     }
 
     outfile.close();
-    return numEmployees
+    return numEmployees;
 }
 
 int readFile(string filename) {
     ifstream inFile(filename);
 
-    int id, numEmployee;
+    int id, numEmployees;
     string name, department;
     double salary;
 
-    inFile >> numEmployee;
+    inFile >> numEmployees;
 
-    for (int i = 0; i < numEmployee; i++) {
+    for (int i = 0; i < numEmployees; i++) {
         inFile >> id >> name >> department >> salary;
         cout << "ID: " << id << " Name: " << name << " Department: " << department << " Salary: " << salary << endl;
     }
     inFile.close();
-    return numEmployee
+    return numEmployees;
 }
 
